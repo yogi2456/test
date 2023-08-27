@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+</head>
+<body>
+    <form onsubmit="product(event)">
+        <label>Name </label> <br />
+        <input type="text" id="name"/> <br />
+        <label>price </label> <br />
+        <input type="price" id="price"/> <br />
+        <label>Image </label> <br />
+        <input type="file" id="image"/> <br />
+        <label>Category </label>
+        <input type="radio" id="category"/> <br />
+        <input type="submit" value="create"/>
+    </form>
+
+    <script>
+        function product(event) {
+            event.preventDefault();
+
+            const userName = document.getElementById("name").value;
+            const userPrice = document.getElementById("price").value;
+            const userImage = document.getElementById("image").value;
+            const userCategory = document.getElementById("category").value;
+            console.log(userName, userPrice, userImage, userCategory)
+
+            if(userName && userPrice && userImage && userCategory) {
+               // alert("product is created")
+
+                const userObject = { name : userName, price : userPrice, image : userImage, category : userCategory };
+
+                var array = JSON.parse(localStorage.getItem("users")) || [];
+
+                array.push(userObject)
+
+                localStorage.setItem("users", JSON.stringify(array));
+
+                document.getElementById("name").value="";
+                document.getElementById("price").value="";
+                document.getElementById("image").value="";
+                document.getElementById("category").value="";
+
+                alert("product is created")
+
+
+            } else {
+                alert("all fields are mandotory")
+            }
+        }
+    </script>
+</body>
+</html>
