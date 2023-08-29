@@ -77,9 +77,13 @@ function findtwoarrays(array, array1) {
         for (var j = 0; j < array1.length; i++) {
             //console.log(array, array1)
             //console.log(i,j)
-            console.log(array[i], array1[j])
+            //console.log(array[i], array1[j])
+            if (array[i] == array1[j]) {
+                result.push(array[i])
+            }
         }
     }
+    return result
 }
 
 console.log(findtwoarrays(array, array1))
