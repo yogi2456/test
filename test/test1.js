@@ -9,5 +9,20 @@
 // }
 // console.log(sumofallelements(array))
 
-var name = "yogesh"
-console.log(name)
+
+// 5. write a function that counts the number of even numbers in an array.
+
+var numbers = [2, 4, 6, 5, 3, 34, 23, 56, 76, 12, 90, 45, 32];
+
+function evennumbercount(numbers) {
+
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 2 == 0) {
+            evencount++
+        }
+    }
+}
+
+evennumbercount(numbers)
+
+
