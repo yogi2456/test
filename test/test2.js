@@ -30,15 +30,16 @@
 // Input: "racecar"
 // Output: true
 
-var array = ["r", "a", "c", "e", "c", "a", "r"];
+var string = "abcdcba";
 
-function palindromecheck(array) {
-    for (var i = 0; i < array.length; i++) {
+function palindromecheck(str) {
+    for (var i = 0; i < str.length / 2; i++) {
         //console.log(array[i])
-        if (array[i] % 2 == 0) {
-            return true
+        if (str[i] !== str[str.length - 1 - i]) {
+            return false
         }
     }
+    return true
 }
 
-palindromecheck(array)
+console.log(palindromecheck(str))
