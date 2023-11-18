@@ -6,7 +6,7 @@
 //***
 //****
 //*****
-var input = 5;
+var input = 7;
 
 function printstars(number) {
 
